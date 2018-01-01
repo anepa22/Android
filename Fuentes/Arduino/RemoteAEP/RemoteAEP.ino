@@ -31,12 +31,12 @@ void setup() {
    pinMode(pinLed4, OUTPUT);
    pinMode(pinLed5, OUTPUT);
    pinMode(pinLed6, OUTPUT);
-   digitalWrite(pinLed1, LOW);
-   digitalWrite(pinLed2, LOW);
-   digitalWrite(pinLed3, LOW);
-   digitalWrite(pinLed4, LOW);
-   digitalWrite(pinLed5, LOW);
-   digitalWrite(pinLed6, LOW);
+   digitalWrite(pinLed1, HIGH);
+   digitalWrite(pinLed2, HIGH);
+   digitalWrite(pinLed3, HIGH);
+   digitalWrite(pinLed4, HIGH);
+   digitalWrite(pinLed5, HIGH);
+   digitalWrite(pinLed6, HIGH);
 }
  
 static word mainPage()
@@ -57,31 +57,31 @@ void loop()
    if (pos) 
    {
       if (strstr((char *)Ethernet::buffer + pos, "GET /?data1=1") != 0) {
-         digitalWrite(pinLed1, HIGH);
+         digitalWrite(pinLed1, LOW);
       }
       if (strstr((char *)Ethernet::buffer + pos, "GET /?data2=1") != 0) {
-         digitalWrite(pinLed2, HIGH);
+         digitalWrite(pinLed2, LOW);
       }
       if (strstr((char *)Ethernet::buffer + pos, "GET /?data3=1") != 0) {
-         digitalWrite(pinLed3, HIGH);
+         digitalWrite(pinLed3, LOW);
       }
       if (strstr((char *)Ethernet::buffer + pos, "GET /?data4=1") != 0) {
-         digitalWrite(pinLed4, HIGH);
+         digitalWrite(pinLed4, LOW);
       }
       if (strstr((char *)Ethernet::buffer + pos, "GET /?data5=1") != 0) {
-         digitalWrite(pinLed5, HIGH);
+         digitalWrite(pinLed5, LOW);
       }
       if (strstr((char *)Ethernet::buffer + pos, "GET /?data6=1") != 0) {
-         digitalWrite(pinLed6, HIGH);
+         digitalWrite(pinLed6, LOW);
       }
       delay(1000);
 
-      digitalWrite(pinLed1, LOW);
-      digitalWrite(pinLed2, LOW);
-      digitalWrite(pinLed3, LOW);
-      digitalWrite(pinLed4, LOW);
-      digitalWrite(pinLed5, LOW);
-      digitalWrite(pinLed6, LOW);
+      digitalWrite(pinLed1, HIGH);
+      digitalWrite(pinLed2, HIGH);
+      digitalWrite(pinLed3, HIGH);
+      digitalWrite(pinLed4, HIGH);
+      digitalWrite(pinLed5, HIGH);
+      digitalWrite(pinLed6, HIGH);
       
       ether.httpServerReply(mainPage());
    }
