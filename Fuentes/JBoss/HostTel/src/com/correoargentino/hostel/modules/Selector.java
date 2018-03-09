@@ -38,7 +38,7 @@ public class Selector implements MessageListener {
     		TextMessage msg = null;
     		if (message instanceof TextMessage) {
     			msg = (TextMessage) message;
-    			System.out.println("MESSAGE BEAN: Message received: " + msg.getText());
+    			System.out.println("MESSAGE BEAN: Message receiveds: " + msg.getText());
     		} else {
     			System.out.println("Message of wrong type: " + message.getClass().getName());
     		}
