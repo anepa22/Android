@@ -10,29 +10,29 @@ import javax.jms.MessageListener;
 import javax.jms.TextMessage;
 
 /**
- * Message-Driven Bean implementation class for: Selector
+ * Message-Driven Bean implementation class for: Impositor
  */
 @MessageDriven(
-		name="Select",
+		name="Impositor",
 		activationConfig = {@ActivationConfigProperty(propertyName = "destinationType", propertyValue = "javax.jms.Queue"),
 				 			@ActivationConfigProperty(propertyName = "acknowledgeMode",propertyValue = "Auto-acknowledge"),
-				 			@ActivationConfigProperty(propertyName = "destination", propertyValue="jms/queue/hosttel/InputMsg")//Name:InputMsg JNDI Names:java:/jms/queue/InputMsg
+				 			@ActivationConfigProperty(propertyName = "destination", propertyValue="jms/queue/hosttel/InposicionMsg")//Name:InputMsg JNDI Names:java:/jms/queue/InputMsg
 				
 		})
-public class Selector implements MessageListener {
+public class Impositor implements MessageListener {
 	@Resource
     private MessageDrivenContext mdc;
 	
     /**
      * Default constructor. 
      */
-    public Selector() {
+    public Impositor() {
         System.out.println("Hola...");
     }
 	
 	/**
-	 * @see MessageListener#onMessage(Message)
-	 */
+     * @see MessageListener#onMessage(Message)
+     */
     public void onMessage(Message message) {
     	try {
     		TextMessage msg = null;
@@ -50,5 +50,4 @@ public class Selector implements MessageListener {
     		mdc.setRollbackOnly();
     	}
     }
-
 }

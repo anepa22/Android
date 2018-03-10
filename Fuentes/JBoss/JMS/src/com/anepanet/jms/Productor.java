@@ -15,7 +15,7 @@ import javax.naming.NamingException;
 
 public class Productor {
 	private static final String PROVIDER_URL = "remote://localhost:4447";
-	private static final String DEFAULT_USERNAME = "remoto";
+	private static final String DEFAULT_USERNAME = "cliente";
 	private static final String DEFAULT_PASSWORD = "1234.qwer";
 	private static final String	DEFAULT_CONNECTION_FACTORY = "jms/RemoteConnectionFactory";
 	private static final String	INITIAL_CONTEXT_FACTORY = "org.jboss.naming.remote.client.InitialContextFactory";
