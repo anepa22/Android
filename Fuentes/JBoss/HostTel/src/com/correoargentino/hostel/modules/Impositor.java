@@ -16,7 +16,7 @@ import javax.jms.TextMessage;
 		name="Impositor",
 		activationConfig = {@ActivationConfigProperty(propertyName = "destinationType", propertyValue = "javax.jms.Queue"),
 				 			@ActivationConfigProperty(propertyName = "acknowledgeMode",propertyValue = "Auto-acknowledge"),
-				 			@ActivationConfigProperty(propertyName = "destination", propertyValue="jms/queue/hosttel/InposicionMsg")//Name:InputMsg JNDI Names:java:/jms/queue/InputMsg
+				 			@ActivationConfigProperty(propertyName = "destination", propertyValue="jms/queue/hosttel/ImposicionMsg")//Name:InputMsg JNDI Names:java:/jms/queue/InputMsg
 				
 		})
 public class Impositor implements MessageListener {

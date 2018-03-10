@@ -19,7 +19,8 @@ public class Productor {
 	private static final String DEFAULT_PASSWORD = "1234.qwer";
 	private static final String	DEFAULT_CONNECTION_FACTORY = "jms/RemoteConnectionFactory";
 	private static final String	INITIAL_CONTEXT_FACTORY = "org.jboss.naming.remote.client.InitialContextFactory";
-	private static final String DEFAULT_DESTINATION = "java:jboss/hosttel/InputMsg";
+//	private static final String DEFAULT_DESTINATION = "InputMsg";
+	private static final String DEFAULT_DESTINATION = "ImposicionMsg";
 
 	/**
 	 * Método estático principal de la clase.
@@ -34,7 +35,7 @@ public class Productor {
 
 //		Queue cola = (Queue) contexto.lookup(DEFAULT_DESTINATION);
 		
-		Queue cola = (Queue)sesion.createQueue("InputMsg");
+		Queue cola = (Queue)sesion.createQueue(DEFAULT_DESTINATION);
 		
 		MessageProducer productor = sesion.createProducer(cola);
 		
